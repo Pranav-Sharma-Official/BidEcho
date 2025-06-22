@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BidEcho - Real-Time Voice Auctions</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <i class="fas fa-gavel"></i>
+            <h1>BidEcho</h1>
+        </div>
+        <nav>
+            <a href="#live-auctions">Live Auctions</a>
+            <a href="#how-it-works">How It Works</a>
+            <a href="#bid-history">My Bids</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-text">
+            <h2>Bid with Your Voice in Real-Time!</h2>
+            <p>"Alexa, bid ₹5000 on the Pokémon card"</p>
+            <button class="cta-button" id="voice-btn">
+                <i class="fas fa-microphone"></i> Try Voice Command
+            </button>
+        </div>
+        <div class="hero-image">
+            <img src="image1.png" alt="Voice Auction">
+        </div>
+    </section>
+
+    <!-- Live Auctions Section -->
+    <section id="live-auctions" class="auctions">
+        <h2><i class="fas fa-bolt"></i> Live Auctions</h2>
+        <div class="auction-cards">
+            <!-- Auction Card 1 -->
+            <div class="card">
+                <img src="images/pokemon-card.jpg" alt="Pokémon Card">
+                <div class="card-content">
+                    <h3>Rare Charizard Card</h3>
+                    <p class="time-left"><i class="far fa-clock"></i> 2m 30s left</p>
+                    <p class="current-bid">Current Bid: <span>₹12,500</span></p>
+                    <div class="bid-form">
+                        <input type="number" placeholder="Enter bid amount" min="12501">
+                        <button class="bid-button">Place Bid</button>
+                    </div>
+                    <p class="voice-hint">or say: "<em>15,000 rupees bid karo</em>"</p>
+                </div>
+            </div>
+
+            <!-- Auction Card 2 -->
+            <div class="card">
+                <img src="images/vintage-watch.jpg" alt="Vintage Watch">
+                <div class="card-content">
+                    <h3>Vintage Rolex</h3>
+                    <p class="time-left"><i class="far fa-clock"></i> 5m 15s left</p>
+                    <p class="current-bid">Current Bid: <span>₹85,000</span></p>
+                    <div class="bid-form">
+                        <input type="number" placeholder="Enter bid amount" min="85001">
+                        <button class="bid-button">Place Bid</button>
+                    </div>
+                    <p class="voice-hint">or say: "<em>90 hazar bid karo</em>"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bid History Section -->
+    <section id="bid-history" class="history">
+        <h2><i class="fas fa-history"></i> Your Bid History</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Your Bid</th>
+                    <th>Status</th>
+                    <th>Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Charizard Card</td>
+                    <td>₹14,000</td>
+                    <td class="leading"><i class="fas fa-crown"></i> Leading</td>
+                    <td>2 mins ago</td>
+                </tr>
+                <tr>
+                    <td>Rolex Watch</td>
+                    <td>₹82,000</td>
+                    <td class="outbid">Outbid</td>
+                    <td>5 mins ago</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="steps">
+        <h2><i class="fas fa-question-circle"></i> How It Works</h2>
+        <div class="step-container">
+            <div class="step">
+                <div class="step-number">1</div>
+                <i class="fas fa-phone-alt"></i>
+                <h3>Call VoiceBid</h3>
+                <p>Dial +91-XXXXXX and connect to our voice agent</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <i class="fas fa-list-ol"></i>
+                <h3>Select Auction</h3>
+                <p>"<em>Pokémon card dikhao</em>" to hear details</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <i class="fas fa-rupee-sign"></i>
+                <h3>Place Bid</h3>
+                <p>"<em>15 hazar bid karo</em>" to compete</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Made with <i class="fas fa-heart"></i> for Code Clash 2.0 Hackathon 2025</p>
+    </footer>
+
+    <!-- Voice Command Popup -->
+    <div class="voice-popup" id="voice-popup">
+        <div class="popup-content">
+            <i class="fas fa-microphone-alt"></i>
+            <h3>Speak Now</h3>
+            <p>"Bid [amount] on [item]"</p>
+            <div class="voice-animation">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+            <button class="close-btn" id="close-voice">Close</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
